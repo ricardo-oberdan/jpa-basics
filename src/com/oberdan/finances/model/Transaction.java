@@ -46,9 +46,9 @@ public class Transaction {
 	@ManyToOne()
 	@JoinColumn(name = "account_id")
 	private Account account;
-	
+
 	@ManyToMany
-	@JoinTable(name="transaction_categories")
+	@JoinTable(name = "transaction_categories", joinColumns = @JoinColumn(name = "transaction_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private List<Category> categories;
 
 	public Integer getId() {

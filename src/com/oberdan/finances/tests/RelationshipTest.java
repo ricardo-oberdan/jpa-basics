@@ -35,5 +35,6 @@ public class RelationshipTest {
 		em.getTransaction().commit();
 
 		em.close();
+		JPAUtil.closeEntityManager();
 	}
 }
