@@ -1,4 +1,4 @@
-package com.oberdan.financas.enums;
+package com.oberdan.finances.enums;
 
 public enum TransactionType {
 	CREDIT(0), DEBIT(1);

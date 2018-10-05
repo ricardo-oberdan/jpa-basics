@@ -1,4 +1,4 @@
-package com.oberdan.financas.model;
+package com.oberdan.finances.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -10,8 +10,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Aqui são listadas todas as entidades -->
-		<class>com.oberdan.financas.model.Account</class>
-		<class>com.oberdan.financas.model.Transaction</class>
+		<class>com.oberdan.finances.model.Account</class>
+		<class>com.oberdan.finances.model.Transaction</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->

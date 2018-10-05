@@ -1,13 +1,13 @@
-package com.oberdan.financas.tests;
+package com.oberdan.finances.tests;
 
 import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
-import com.oberdan.financas.enums.TransactionType;
-import com.oberdan.financas.model.Account;
-import com.oberdan.financas.model.Transaction;
-import com.oberdan.financas.util.JPAUtil;
+import com.oberdan.finances.enums.TransactionType;
+import com.oberdan.finances.model.Account;
+import com.oberdan.finances.model.Transaction;
+import com.oberdan.finances.util.JPAUtil;
 
 public class RelationshipTest {
 	public static void main(String[] args) {

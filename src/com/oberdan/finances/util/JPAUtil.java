@@ -1,4 +1,4 @@
-package com.oberdan.financas.util;
+package com.oberdan.finances.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

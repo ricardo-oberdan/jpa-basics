@@ -1,9 +1,9 @@
-package com.oberdan.financas.tests;
+package com.oberdan.finances.tests;
 
 import javax.persistence.EntityManager;
 
-import com.oberdan.financas.model.Account;
-import com.oberdan.financas.util.JPAUtil;
+import com.oberdan.finances.model.Account;
+import com.oberdan.finances.util.JPAUtil;
 
 public class PopulateAccounts {
 

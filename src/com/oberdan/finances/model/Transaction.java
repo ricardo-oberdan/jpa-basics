@@ -1,6 +1,7 @@
-package com.oberdan.financas.model;
+package com.oberdan.finances.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,12 +11,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.oberdan.financas.enums.TransactionType;
+import com.oberdan.finances.enums.TransactionType;
 
 @Entity(name = "TRANSACTIONS")
 @SequenceGenerator(name = "TRANSACTION_GENERATOR", sequenceName = "TRANSACTION_SEQ", allocationSize = 1)
@@ -43,6 +46,10 @@ public class Transaction {
 	@ManyToOne()
 	@JoinColumn(name = "account_id")
 	private Account account;
+	
+	@ManyToMany
+	@JoinTable(name="transaction_categories")
+	private List<Category> categories;
 
 	public Integer getId() {
 		return id;
@@ -92,10 +99,18 @@ public class Transaction {
 		this.account = account;
 	}
 
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+
 	@Override
 	public String toString() {
 		return "Transaction [id=" + id + ", value=" + value + ", type=" + type + ", date=" + date + ", description="
-				+ description + ", account=" + account + "]";
+				+ description + ", account=" + account + ", categories=" + categories + "]";
 	}
 
 }
