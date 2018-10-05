@@ -13,7 +13,13 @@ public class Category {
 
 	@Column(name = "name")
 	private String name;
+	
+	public Category() {}
 
+	public Category(Integer id) {
+		this.id = id;
+	}
+	
 	public String getName() {
 		return name;
 	}
