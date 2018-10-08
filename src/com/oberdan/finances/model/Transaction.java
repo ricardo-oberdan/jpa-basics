@@ -1,5 +1,6 @@
 package com.oberdan.finances.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +24,7 @@ import javax.persistence.TemporalType;
 import com.oberdan.finances.enums.TransactionType;
 
 @Entity
-@Table(name="TRANSACTIONS")
+@Table(name = "TRANSACTIONS")
 @SequenceGenerator(name = "TRANSACTION_GENERATOR", sequenceName = "TRANSACTION_SEQ", allocationSize = 1)
 public class Transaction {
 
@@ -45,7 +47,7 @@ public class Transaction {
 	@Column(name = "description")
 	private String description;
 
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "account_id")
 	private Account account;
 
@@ -84,6 +86,10 @@ public class Transaction {
 	public void setDate(Calendar date) {
 		this.date = date;
 	}
+	
+	public String getDateFormatted() {
+		return new SimpleDateFormat("dd/MM/yyyy").format(this.date.getTime());
+	}
 
 	public String getDescription() {
 		return description;
@@ -111,8 +117,8 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", value=" + value + ", type=" + type + ", date=" + date + ", description="
-				+ description + ", account=" + account + ", categories=" + categories + "]";
+		return "Transaction [id=" + id + ", value=" + value + ", type=" + type + ", date=" + getDateFormatted() + ", description="
+				+ description + ", account=" + account + "]";
 	}
 
 }

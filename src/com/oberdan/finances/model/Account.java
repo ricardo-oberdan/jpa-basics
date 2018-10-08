@@ -1,8 +1,12 @@
 package com.oberdan.finances.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +28,9 @@ public class Account {
 
 	@Column(name = "balance", nullable = false)
 	private Double balance;
+
+	@OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+	private List<Transaction> transactions;
 
 	public Integer getId() {
 		return id;
@@ -64,11 +71,12 @@ public class Account {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
 
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", bank=" + bank + ", agency=" + agency + ", holder=" + holder + ", balance="
-				+ balance + "]";
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
 	}
 
 }
