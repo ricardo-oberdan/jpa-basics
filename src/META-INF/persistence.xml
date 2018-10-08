@@ -12,6 +12,7 @@
 		<!-- Aqui são listadas todas as entidades -->
 		<class>com.oberdan.finances.model.Account</class>
 		<class>com.oberdan.finances.model.Transaction</class>
+		<class>com.oberdan.finances.model.Category</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->

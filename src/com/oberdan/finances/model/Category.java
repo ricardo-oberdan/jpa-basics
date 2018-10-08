@@ -3,8 +3,10 @@ package com.oberdan.finances.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name = "CATEGORIES")
+@Entity
+@Table(name = "CATEGORIES")
 public class Category {
 
 	@Id

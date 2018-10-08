@@ -15,12 +15,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.oberdan.finances.enums.TransactionType;
 
-@Entity(name = "TRANSACTIONS")
+@Entity
+@Table(name="TRANSACTIONS")
 @SequenceGenerator(name = "TRANSACTION_GENERATOR", sequenceName = "TRANSACTION_SEQ", allocationSize = 1)
 public class Transaction {
 
